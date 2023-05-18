@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: Swagger OpenApiGenerator - OpenAPI 3.0
+  description: openapiGenerator
+  version: 1.0.11
+#servers:
+#  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: openapi
+    description: descripcion transacciones
+paths:
+  /openapi/listado:
+    post:
+      tags:
+        - openapi
+      summary: ejemplo open api
+      description: Multiple status values can be provided with comma separated stringsf
+      #operationId: openapiEjemplo
+      parameters:
+        - name: statusCode
+          in: header
+          schema:
+            type: string
+      requestBody:
+        description: Update an existent pet in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/transaccionResponseLista'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/transaccionResponseLista'
+              examples:
+                'respuestao-ok':
+                  value:
+                    title: Ok
+                    detail: la respuesta fue correcta no hubo ningun problema
+                    transacciones:
+                      - id: 1
+                        name: datos1
+                      - id: 2
+                        name: datos2
+        '202':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base-error'
+components:
+  schemas:
+    base-error:
+      type: object
+      properties:
+        title:
+          type: string
+        detail:
+          type: string
+        type:
+          type: string
+          default: about:blank
+    transaccionResponseLista:
+      type: object
+      properties:
+        title:
+          type: string
+        detail:
+          type: string
+        type:
+          type: string
+          default: about:blank
+        transacciones:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string

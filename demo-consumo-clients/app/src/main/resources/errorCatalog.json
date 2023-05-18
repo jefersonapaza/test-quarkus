@@ -1,0 +1,16 @@
+{
+  "catalog": [
+    {
+      "code": "MS_01",
+      "title": "Error servicio onpremise",
+      "detail": "Error al consultar el servicio onpremise",
+      "status": 400
+    },
+    {
+      "code": "MS_02",
+      "title": "title 2",
+      "detail": "detail 2",
+      "status": 400
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "catalog": [
+    {
+      "code": "MS-01",
+      "title": "onpremise 1",
+      "detail": "ocurrio un problema en el servicio on premise 1",
+      "status": 400
+    },
+    {
+      "code": "MS-02",
+      "title": "onpremise 2",
+      "detail": "ocurrio un problema en el servicio on premise 2",
+      "status": 400
+    }
+  ]
+}

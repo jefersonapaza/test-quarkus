@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: Swagger  OnPremise2 - OpenAPI 3.0
+  description: ejemplo OnPremise2
+  version: 1.0.11
+#servers:
+#  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: OnPremise2
+    description: trabajar con OnPremise
+paths:
+  /on-premise2:
+    get:
+      tags:
+        - OnPremise2
+      parameters:
+        - name: Prefer
+          in: header
+          schema:
+            type: string
+            default: 0
+      summary: transacciones ejemplo
+      description: obtener personas
+      operationId: getPersonas
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persona2'
+              examples:
+                correcta:
+                  value:
+                    id: 1
+                    name: nuevoooo
+        '202':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/base-error'
+              examples:
+                functional1:
+                  value:
+                    title: error1
+                    detail: detail error1
+                    type: about:blank
+                functional2:
+                  value:
+                    title: error1
+                    detail: detail error1
+                    type: about:blank
+components:
+  schemas:
+    base-error:
+      type: object
+      properties:
+        title:
+          type: string
+        detail:
+          type: string
+        type:
+          type: string
+          default: about:blank
+    Persona2:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
